@@ -99,6 +99,72 @@ PrivateSubnet2 = t.add_resource(ec2.Subnet(
     Tags=Tags(Name=Sub("${EnvironmentName} Private Subnet (AZ2)"))
 ))
 
+VPCFlowLogToS3 = t.add_resource(ec2.FlowLog(
+    "VPCFlowLogToS3",
+    ResourceType="VPC",
+    ResourceId=Ref(VPC),
+    TrafficType="REJECT",
+    LogDestination="arn:aws:s3:::polystudents3-anis-michlove-unique",
+    LogDestinationType="s3"
+))
+
+# Public Instances
+PublicInstance1 = t.add_resource(ec2.Instance(
+    "PublicInstance1",
+    ImageId="ami-00f46ccd1cbfb363e",
+    InstanceType="t3.micro",
+    SubnetId=Ref(PublicSubnet1),
+    IamInstanceProfile="LabInstanceProfile",
+    Tags=Tags(Name=Sub("${EnvironmentName} Public Instance 1"))
+))
+
+PublicInstance2 = t.add_resource(ec2.Instance(
+    "PublicInstance2",
+    ImageId="ami-00f46ccd1cbfb363e",
+    InstanceType="t3.micro",
+    SubnetId=Ref(PublicSubnet2),
+    IamInstanceProfile="LabInstanceProfile",
+    Tags=Tags(Name=Sub("${EnvironmentName} Public Instance 2"))
+))
+
+# Private Instances
+PrivateInstance1 = t.add_resource(ec2.Instance(
+    "PrivateInstance1",
+    ImageId="ami-00f46ccd1cbfb363e",
+    InstanceType="t3.micro",
+    SubnetId=Ref(PrivateSubnet1),
+    IamInstanceProfile="LabInstanceProfile",
+    Tags=Tags(Name=Sub("${EnvironmentName} Private Instance 1"))
+))
+
+PrivateInstance2 = t.add_resource(ec2.Instance(
+    "PrivateInstance2",
+    ImageId="ami-00f46ccd1cbfb363e",
+    InstanceType="t3.micro",
+    SubnetId=Ref(PrivateSubnet2),
+    IamInstanceProfile="LabInstanceProfile",
+    Tags=Tags(Name=Sub("${EnvironmentName} Private Instance 2"))
+))
+
+for i, instance in enumerate([PublicInstance1, PublicInstance2, PrivateInstance1, PrivateInstance2], 1):
+    t.add_resource(cloudwatch.Alarm(
+        f"IngressPacketsAlarm{i}",
+        AlarmDescription=f"Alarm if ingress packets exceed 1000 pkts/sec on instance {i}",
+        Namespace="AWS/EC2",
+        MetricName="NetworkPacketsIn",
+        Dimensions=[cloudwatch.MetricDimension(
+            Name="InstanceId",
+            Value=Ref(instance)
+        )],
+        Statistic="Average",
+        Period=60,
+        EvaluationPeriods=1,
+        Threshold=1000,
+        ComparisonOperator="GreaterThanThreshold",
+        AlarmActions=[],
+        OKActions=[]
+    ))
+
 # Internet Gateway
 InternetGateway = t.add_resource(ec2.InternetGateway(
     "InternetGateway",
