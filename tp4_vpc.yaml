@@ -72,6 +72,70 @@ Resources:
       GatewayId: !Ref 'InternetGateway'
       RouteTableId: !Ref 'PublicRouteTable'
     Type: AWS::EC2::Route
+  IngressPacketsAlarm1:
+    Properties:
+      AlarmActions: []
+      AlarmDescription: Alarm if ingress packets exceed 1000 pkts/sec on instance 1
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: InstanceId
+          Value: !Ref 'PublicInstance1'
+      EvaluationPeriods: 1
+      MetricName: NetworkPacketsIn
+      Namespace: AWS/EC2
+      OKActions: []
+      Period: 60
+      Statistic: Average
+      Threshold: 1000
+    Type: AWS::CloudWatch::Alarm
+  IngressPacketsAlarm2:
+    Properties:
+      AlarmActions: []
+      AlarmDescription: Alarm if ingress packets exceed 1000 pkts/sec on instance 2
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: InstanceId
+          Value: !Ref 'PublicInstance2'
+      EvaluationPeriods: 1
+      MetricName: NetworkPacketsIn
+      Namespace: AWS/EC2
+      OKActions: []
+      Period: 60
+      Statistic: Average
+      Threshold: 1000
+    Type: AWS::CloudWatch::Alarm
+  IngressPacketsAlarm3:
+    Properties:
+      AlarmActions: []
+      AlarmDescription: Alarm if ingress packets exceed 1000 pkts/sec on instance 3
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: InstanceId
+          Value: !Ref 'PrivateInstance1'
+      EvaluationPeriods: 1
+      MetricName: NetworkPacketsIn
+      Namespace: AWS/EC2
+      OKActions: []
+      Period: 60
+      Statistic: Average
+      Threshold: 1000
+    Type: AWS::CloudWatch::Alarm
+  IngressPacketsAlarm4:
+    Properties:
+      AlarmActions: []
+      AlarmDescription: Alarm if ingress packets exceed 1000 pkts/sec on instance 4
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: InstanceId
+          Value: !Ref 'PrivateInstance2'
+      EvaluationPeriods: 1
+      MetricName: NetworkPacketsIn
+      Namespace: AWS/EC2
+      OKActions: []
+      Period: 60
+      Statistic: Average
+      Threshold: 1000
+    Type: AWS::CloudWatch::Alarm
   IngressSecurityGroup:
     Properties:
       GroupDescription: Security group allows SSH, HTTP, HTTPS, MSSQL, PostgreSQL, MySQL, RDP, OSSEC, ElasticSearch, DNS...
@@ -158,6 +222,26 @@ Resources:
     Properties:
       Domain: vpc
     Type: AWS::EC2::EIP
+  PrivateInstance1:
+    Properties:
+      IamInstanceProfile: LabInstanceProfile
+      ImageId: ami-00f46ccd1cbfb363e
+      InstanceType: t3.micro
+      SubnetId: !Ref 'PrivateSubnet1'
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Private Instance 1'
+    Type: AWS::EC2::Instance
+  PrivateInstance2:
+    Properties:
+      IamInstanceProfile: LabInstanceProfile
+      ImageId: ami-00f46ccd1cbfb363e
+      InstanceType: t3.micro
+      SubnetId: !Ref 'PrivateSubnet2'
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Private Instance 2'
+    Type: AWS::EC2::Instance
   PrivateRouteTable1:
     Properties:
       Tags:
@@ -206,6 +290,26 @@ Resources:
       RouteTableId: !Ref 'PrivateRouteTable2'
       SubnetId: !Ref 'PrivateSubnet2'
     Type: AWS::EC2::SubnetRouteTableAssociation
+  PublicInstance1:
+    Properties:
+      IamInstanceProfile: LabInstanceProfile
+      ImageId: ami-00f46ccd1cbfb363e
+      InstanceType: t3.micro
+      SubnetId: !Ref 'PublicSubnet1'
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Public Instance 1'
+    Type: AWS::EC2::Instance
+  PublicInstance2:
+    Properties:
+      IamInstanceProfile: LabInstanceProfile
+      ImageId: ami-00f46ccd1cbfb363e
+      InstanceType: t3.micro
+      SubnetId: !Ref 'PublicSubnet2'
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Public Instance 2'
+    Type: AWS::EC2::Instance
   PublicRouteTable:
     Properties:
       Tags:
@@ -256,3 +360,11 @@ Resources:
         - Key: Name
           Value: !Ref 'EnvironmentName'
     Type: AWS::EC2::VPC
+  VPCFlowLogToS3:
+    Properties:
+      LogDestination: arn:aws:s3:::polystudents3-anis-michlove-unique
+      LogDestinationType: s3
+      ResourceId: !Ref 'VPC'
+      ResourceType: VPC
+      TrafficType: REJECT
+    Type: AWS::EC2::FlowLog
