@@ -1,11 +1,31 @@
 import boto3
+import json
 from botocore.exceptions import ClientError
 
-KMS_KEY_ARN = "arn:aws:kms:us-west-2:767397842641:key/44fd78a9-01ad-4323-8ccd-24e608de0197"
-BUCKET_NAME = "polystudents3-anis-michlove-unique"
 REGION = "us-west-2"
+BUCKET_NAME = "polystudents3-anis-michlove-unique"
+KMS_KEY_ARN = "arn:aws:kms:us-west-2:767397842641:key/44fd78a9-01ad-4323-8ccd-24e608de0197"
 
 s3_client = boto3.client("s3", region_name=REGION)
+
+flow_log_policy = {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {"Service": "delivery.logs.amazonaws.com"},
+            "Action": ["s3:PutObject", "s3:PutObjectAcl"],
+            "Resource": f"arn:aws:s3:::{BUCKET_NAME}/*",
+            "Condition": {"StringEquals": {"s3:x-amz-acl": "bucket-owner-full-control"}}
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {"Service": "delivery.logs.amazonaws.com"},
+            "Action": "s3:GetBucketAcl",
+            "Resource": f"arn:aws:s3:::{BUCKET_NAME}"
+        }
+    ]
+}
 
 def create_bucket(bucket):
     try:
