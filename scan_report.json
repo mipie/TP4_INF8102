@@ -1,8 +1,16 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-11-23T15:05:11.648235051-05:00",
-  "ArtifactName": "polylab/tp4_vpc.yaml",
+  "CreatedAt": "2025-12-11T00:36:35.437349426-05:00",
+  "ArtifactName": ".",
   "ArtifactType": "filesystem",
+  "Metadata": {
+    "RepoURL": "git@github.com:mipie/TP4_INF8102.git",
+    "Branch": "main",
+    "Commit": "c5d9d65d00f6a155283f8e26ecb4f9144dad9db6",
+    "CommitMsg": "Création du nouveau script pour créer le nouveau bucket et activer le CloudTrail",
+    "Author": "Michi \u003cmichlove.pierre@polymtl.ca\u003e",
+    "Committer": "Michi \u003cmichlove.pierre@polymtl.ca\u003e"
+  },
   "Results": [
     {
       "Target": "tp4_vpc.yaml",
@@ -31,15 +39,15 @@
           ],
           "Status": "FAIL",
           "CauseMetadata": {
-            "Resource": "tp4_vpc.yaml:226-235",
+            "Resource": "tp4_vpc.yaml:225-234",
             "Provider": "AWS",
             "Service": "ec2",
-            "StartLine": 226,
-            "EndLine": 235,
+            "StartLine": 225,
+            "EndLine": 234,
             "Code": {
               "Lines": [
                 {
-                  "Number": 226,
+                  "Number": 225,
                   "Content": "  PrivateInstance1:",
                   "IsCause": true,
                   "Annotation": "",
@@ -49,7 +57,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 227,
+                  "Number": 226,
                   "Content": "    Properties:",
                   "IsCause": true,
                   "Annotation": "",
@@ -59,7 +67,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 228,
+                  "Number": 227,
                   "Content": "      IamInstanceProfile: LabInstanceProfile",
                   "IsCause": true,
                   "Annotation": "",
@@ -69,7 +77,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 229,
+                  "Number": 228,
                   "Content": "      ImageId: ami-00f46ccd1cbfb363e",
                   "IsCause": true,
                   "Annotation": "",
@@ -79,7 +87,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 230,
+                  "Number": 229,
                   "Content": "      InstanceType: t3.micro",
                   "IsCause": true,
                   "Annotation": "",
@@ -89,7 +97,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 231,
+                  "Number": 230,
                   "Content": "      SubnetId: !Ref 'PrivateSubnet1'",
                   "IsCause": true,
                   "Annotation": "",
@@ -99,7 +107,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 232,
+                  "Number": 231,
                   "Content": "      Tags:",
                   "IsCause": true,
                   "Annotation": "",
@@ -109,7 +117,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 233,
+                  "Number": 232,
                   "Content": "        - Key: Name",
                   "IsCause": true,
                   "Annotation": "",
@@ -119,7 +127,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 234,
+                  "Number": 233,
                   "Content": "          Value: !Sub '${EnvironmentName} Private Instance 1'",
                   "IsCause": true,
                   "Annotation": "",
@@ -129,7 +137,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 235,
+                  "Number": 234,
                   "Content": "    Type: AWS::EC2::Instance",
                   "IsCause": true,
                   "Annotation": "",
@@ -160,15 +168,15 @@
           ],
           "Status": "FAIL",
           "CauseMetadata": {
-            "Resource": "tp4_vpc.yaml:236-245",
+            "Resource": "tp4_vpc.yaml:235-244",
             "Provider": "AWS",
             "Service": "ec2",
-            "StartLine": 236,
-            "EndLine": 245,
+            "StartLine": 235,
+            "EndLine": 244,
             "Code": {
               "Lines": [
                 {
-                  "Number": 236,
+                  "Number": 235,
                   "Content": "  PrivateInstance2:",
                   "IsCause": true,
                   "Annotation": "",
@@ -178,7 +186,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 237,
+                  "Number": 236,
                   "Content": "    Properties:",
                   "IsCause": true,
                   "Annotation": "",
@@ -188,7 +196,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 238,
+                  "Number": 237,
                   "Content": "      IamInstanceProfile: LabInstanceProfile",
                   "IsCause": true,
                   "Annotation": "",
@@ -198,7 +206,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 239,
+                  "Number": 238,
                   "Content": "      ImageId: ami-00f46ccd1cbfb363e",
                   "IsCause": true,
                   "Annotation": "",
@@ -208,7 +216,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 240,
+                  "Number": 239,
                   "Content": "      InstanceType: t3.micro",
                   "IsCause": true,
                   "Annotation": "",
@@ -218,7 +226,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 241,
+                  "Number": 240,
                   "Content": "      SubnetId: !Ref 'PrivateSubnet2'",
                   "IsCause": true,
                   "Annotation": "",
@@ -228,7 +236,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 242,
+                  "Number": 241,
                   "Content": "      Tags:",
                   "IsCause": true,
                   "Annotation": "",
@@ -238,7 +246,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 243,
+                  "Number": 242,
                   "Content": "        - Key: Name",
                   "IsCause": true,
                   "Annotation": "",
@@ -248,7 +256,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 244,
+                  "Number": 243,
                   "Content": "          Value: !Sub '${EnvironmentName} Private Instance 2'",
                   "IsCause": true,
                   "Annotation": "",
@@ -258,7 +266,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 245,
+                  "Number": 244,
                   "Content": "    Type: AWS::EC2::Instance",
                   "IsCause": true,
                   "Annotation": "",
@@ -289,15 +297,15 @@
           ],
           "Status": "FAIL",
           "CauseMetadata": {
-            "Resource": "tp4_vpc.yaml:294-303",
+            "Resource": "tp4_vpc.yaml:293-302",
             "Provider": "AWS",
             "Service": "ec2",
-            "StartLine": 294,
-            "EndLine": 303,
+            "StartLine": 293,
+            "EndLine": 302,
             "Code": {
               "Lines": [
                 {
-                  "Number": 294,
+                  "Number": 293,
                   "Content": "  PublicInstance1:",
                   "IsCause": true,
                   "Annotation": "",
@@ -307,7 +315,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 295,
+                  "Number": 294,
                   "Content": "    Properties:",
                   "IsCause": true,
                   "Annotation": "",
@@ -317,7 +325,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 296,
+                  "Number": 295,
                   "Content": "      IamInstanceProfile: LabInstanceProfile",
                   "IsCause": true,
                   "Annotation": "",
@@ -327,7 +335,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 297,
+                  "Number": 296,
                   "Content": "      ImageId: ami-00f46ccd1cbfb363e",
                   "IsCause": true,
                   "Annotation": "",
@@ -337,7 +345,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 298,
+                  "Number": 297,
                   "Content": "      InstanceType: t3.micro",
                   "IsCause": true,
                   "Annotation": "",
@@ -347,7 +355,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 299,
+                  "Number": 298,
                   "Content": "      SubnetId: !Ref 'PublicSubnet1'",
                   "IsCause": true,
                   "Annotation": "",
@@ -357,7 +365,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 300,
+                  "Number": 299,
                   "Content": "      Tags:",
                   "IsCause": true,
                   "Annotation": "",
@@ -367,7 +375,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 301,
+                  "Number": 300,
                   "Content": "        - Key: Name",
                   "IsCause": true,
                   "Annotation": "",
@@ -377,7 +385,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 302,
+                  "Number": 301,
                   "Content": "          Value: !Sub '${EnvironmentName} Public Instance 1'",
                   "IsCause": true,
                   "Annotation": "",
@@ -387,7 +395,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 303,
+                  "Number": 302,
                   "Content": "    Type: AWS::EC2::Instance",
                   "IsCause": true,
                   "Annotation": "",
@@ -418,15 +426,15 @@
           ],
           "Status": "FAIL",
           "CauseMetadata": {
-            "Resource": "tp4_vpc.yaml:304-313",
+            "Resource": "tp4_vpc.yaml:303-312",
             "Provider": "AWS",
             "Service": "ec2",
-            "StartLine": 304,
-            "EndLine": 313,
+            "StartLine": 303,
+            "EndLine": 312,
             "Code": {
               "Lines": [
                 {
-                  "Number": 304,
+                  "Number": 303,
                   "Content": "  PublicInstance2:",
                   "IsCause": true,
                   "Annotation": "",
@@ -436,7 +444,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 305,
+                  "Number": 304,
                   "Content": "    Properties:",
                   "IsCause": true,
                   "Annotation": "",
@@ -446,7 +454,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 306,
+                  "Number": 305,
                   "Content": "      IamInstanceProfile: LabInstanceProfile",
                   "IsCause": true,
                   "Annotation": "",
@@ -456,7 +464,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 307,
+                  "Number": 306,
                   "Content": "      ImageId: ami-00f46ccd1cbfb363e",
                   "IsCause": true,
                   "Annotation": "",
@@ -466,7 +474,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 308,
+                  "Number": 307,
                   "Content": "      InstanceType: t3.micro",
                   "IsCause": true,
                   "Annotation": "",
@@ -476,7 +484,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 309,
+                  "Number": 308,
                   "Content": "      SubnetId: !Ref 'PublicSubnet2'",
                   "IsCause": true,
                   "Annotation": "",
@@ -486,7 +494,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 310,
+                  "Number": 309,
                   "Content": "      Tags:",
                   "IsCause": true,
                   "Annotation": "",
@@ -496,7 +504,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 311,
+                  "Number": 310,
                   "Content": "        - Key: Name",
                   "IsCause": true,
                   "Annotation": "",
@@ -506,7 +514,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 312,
+                  "Number": 311,
                   "Content": "          Value: !Sub '${EnvironmentName} Public Instance 2'",
                   "IsCause": true,
                   "Annotation": "",
@@ -516,7 +524,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 313,
+                  "Number": 312,
                   "Content": "    Type: AWS::EC2::Instance",
                   "IsCause": true,
                   "Annotation": "",
@@ -552,12 +560,12 @@
             "Resource": "IngressSecurityGroup",
             "Provider": "AWS",
             "Service": "ec2",
-            "StartLine": 145,
-            "EndLine": 145,
+            "StartLine": 176,
+            "EndLine": 176,
             "Code": {
               "Lines": [
                 {
-                  "Number": 140,
+                  "Number": 139,
                   "Content": "  IngressSecurityGroup:",
                   "IsCause": false,
                   "Annotation": "",
@@ -567,96 +575,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 141,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 145,
-                  "Content": "        - CidrIp: '0.0.0.0/0'",
-                  "IsCause": true,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "        - \u001b[38;5;33mCidrIp\u001b[0m: \u001b[38;5;37m'0.0.0.0/0'",
-                  "FirstCause": true,
-                  "LastCause": true
-                },
-                {
-                  "Number": 193,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 194,
-                  "Content": "    Type: AWS::EC2::SecurityGroup",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "    \u001b[38;5;33mType\u001b[0m: AWS::EC2::SecurityGroup",
-                  "FirstCause": false,
-                  "LastCause": false
-                }
-              ]
-            },
-            "Occurrences": [
-              {
-                "Resource": "IngressSecurityGroup",
-                "Filename": "tp4_vpc.yaml",
-                "Location": {
-                  "StartLine": 140,
-                  "EndLine": 194
-                }
-              }
-            ]
-          }
-        },
-        {
-          "Type": "CloudFormation Security Check",
-          "ID": "AVD-AWS-0107",
-          "AVDID": "AVD-AWS-0107",
-          "Title": "Security groups should not allow unrestricted ingress to SSH or RDP from any IP address.",
-          "Description": "Security groups provide stateful filtering of ingress and egress network traffic to AWS\nresources. It is recommended that no security group allows unrestricted ingress access to\nremote server administration ports, such as SSH to port 22 and RDP to port 3389.\n",
-          "Message": "Security group rule allows unrestricted ingress from any IP address.",
-          "Namespace": "builtin.aws.ec2.aws0107",
-          "Query": "data.builtin.aws.ec2.aws0107.deny",
-          "Resolution": "Set a more restrictive CIDR range",
-          "Severity": "HIGH",
-          "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-aws-0107",
-          "References": [
-            "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html",
-            "https://docs.aws.amazon.com/securityhub/latest/userguide/ec2-controls.html#ec2-13",
-            "https://docs.aws.amazon.com/securityhub/latest/userguide/ec2-controls.html#ec2-14",
-            "https://avd.aquasec.com/misconfig/avd-aws-0107"
-          ],
-          "Status": "FAIL",
-          "CauseMetadata": {
-            "Resource": "IngressSecurityGroup",
-            "Provider": "AWS",
-            "Service": "ec2",
-            "StartLine": 177,
-            "EndLine": 177,
-            "Code": {
-              "Lines": [
-                {
                   "Number": 140,
-                  "Content": "  IngressSecurityGroup:",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "  \u001b[38;5;33mIngressSecurityGroup\u001b[0m:",
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 141,
                   "Content": "",
                   "IsCause": false,
                   "Annotation": "",
@@ -665,7 +584,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 177,
+                  "Number": 176,
                   "Content": "        - CidrIp: '0.0.0.0/0'",
                   "IsCause": true,
                   "Annotation": "",
@@ -675,7 +594,7 @@
                   "LastCause": true
                 },
                 {
-                  "Number": 193,
+                  "Number": 192,
                   "Content": "",
                   "IsCause": false,
                   "Annotation": "",
@@ -684,7 +603,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 194,
+                  "Number": 193,
                   "Content": "    Type: AWS::EC2::SecurityGroup",
                   "IsCause": false,
                   "Annotation": "",
@@ -700,8 +619,97 @@
                 "Resource": "IngressSecurityGroup",
                 "Filename": "tp4_vpc.yaml",
                 "Location": {
-                  "StartLine": 140,
-                  "EndLine": 194
+                  "StartLine": 139,
+                  "EndLine": 193
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Type": "CloudFormation Security Check",
+          "ID": "AVD-AWS-0107",
+          "AVDID": "AVD-AWS-0107",
+          "Title": "Security groups should not allow unrestricted ingress to SSH or RDP from any IP address.",
+          "Description": "Security groups provide stateful filtering of ingress and egress network traffic to AWS\nresources. It is recommended that no security group allows unrestricted ingress access to\nremote server administration ports, such as SSH to port 22 and RDP to port 3389.\n",
+          "Message": "Security group rule allows unrestricted ingress from any IP address.",
+          "Namespace": "builtin.aws.ec2.aws0107",
+          "Query": "data.builtin.aws.ec2.aws0107.deny",
+          "Resolution": "Set a more restrictive CIDR range",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-aws-0107",
+          "References": [
+            "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html",
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/ec2-controls.html#ec2-13",
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/ec2-controls.html#ec2-14",
+            "https://avd.aquasec.com/misconfig/avd-aws-0107"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "IngressSecurityGroup",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 144,
+            "EndLine": 144,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 139,
+                  "Content": "  IngressSecurityGroup:",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;33mIngressSecurityGroup\u001b[0m:",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 140,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 144,
+                  "Content": "        - CidrIp: '0.0.0.0/0'",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "        - \u001b[38;5;33mCidrIp\u001b[0m: \u001b[38;5;37m'0.0.0.0/0'",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 192,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 193,
+                  "Content": "    Type: AWS::EC2::SecurityGroup",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "    \u001b[38;5;33mType\u001b[0m: AWS::EC2::SecurityGroup",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "IngressSecurityGroup",
+                "Filename": "tp4_vpc.yaml",
+                "Location": {
+                  "StartLine": 139,
+                  "EndLine": 193
                 }
               }
             ]
@@ -725,15 +733,15 @@
           ],
           "Status": "FAIL",
           "CauseMetadata": {
-            "Resource": "tp4_vpc.yaml:226-235",
+            "Resource": "tp4_vpc.yaml:225-234",
             "Provider": "AWS",
             "Service": "ec2",
-            "StartLine": 226,
-            "EndLine": 235,
+            "StartLine": 225,
+            "EndLine": 234,
             "Code": {
               "Lines": [
                 {
-                  "Number": 226,
+                  "Number": 225,
                   "Content": "  PrivateInstance1:",
                   "IsCause": true,
                   "Annotation": "",
@@ -743,7 +751,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 227,
+                  "Number": 226,
                   "Content": "    Properties:",
                   "IsCause": true,
                   "Annotation": "",
@@ -753,7 +761,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 228,
+                  "Number": 227,
                   "Content": "      IamInstanceProfile: LabInstanceProfile",
                   "IsCause": true,
                   "Annotation": "",
@@ -763,7 +771,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 229,
+                  "Number": 228,
                   "Content": "      ImageId: ami-00f46ccd1cbfb363e",
                   "IsCause": true,
                   "Annotation": "",
@@ -773,7 +781,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 230,
+                  "Number": 229,
                   "Content": "      InstanceType: t3.micro",
                   "IsCause": true,
                   "Annotation": "",
@@ -783,7 +791,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 231,
+                  "Number": 230,
                   "Content": "      SubnetId: !Ref 'PrivateSubnet1'",
                   "IsCause": true,
                   "Annotation": "",
@@ -793,7 +801,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 232,
+                  "Number": 231,
                   "Content": "      Tags:",
                   "IsCause": true,
                   "Annotation": "",
@@ -803,7 +811,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 233,
+                  "Number": 232,
                   "Content": "        - Key: Name",
                   "IsCause": true,
                   "Annotation": "",
@@ -813,7 +821,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 234,
+                  "Number": 233,
                   "Content": "          Value: !Sub '${EnvironmentName} Private Instance 1'",
                   "IsCause": true,
                   "Annotation": "",
@@ -823,7 +831,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 235,
+                  "Number": 234,
                   "Content": "    Type: AWS::EC2::Instance",
                   "IsCause": true,
                   "Annotation": "",
@@ -854,15 +862,15 @@
           ],
           "Status": "FAIL",
           "CauseMetadata": {
-            "Resource": "tp4_vpc.yaml:236-245",
+            "Resource": "tp4_vpc.yaml:235-244",
             "Provider": "AWS",
             "Service": "ec2",
-            "StartLine": 236,
-            "EndLine": 245,
+            "StartLine": 235,
+            "EndLine": 244,
             "Code": {
               "Lines": [
                 {
-                  "Number": 236,
+                  "Number": 235,
                   "Content": "  PrivateInstance2:",
                   "IsCause": true,
                   "Annotation": "",
@@ -872,7 +880,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 237,
+                  "Number": 236,
                   "Content": "    Properties:",
                   "IsCause": true,
                   "Annotation": "",
@@ -882,7 +890,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 238,
+                  "Number": 237,
                   "Content": "      IamInstanceProfile: LabInstanceProfile",
                   "IsCause": true,
                   "Annotation": "",
@@ -892,7 +900,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 239,
+                  "Number": 238,
                   "Content": "      ImageId: ami-00f46ccd1cbfb363e",
                   "IsCause": true,
                   "Annotation": "",
@@ -902,7 +910,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 240,
+                  "Number": 239,
                   "Content": "      InstanceType: t3.micro",
                   "IsCause": true,
                   "Annotation": "",
@@ -912,7 +920,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 241,
+                  "Number": 240,
                   "Content": "      SubnetId: !Ref 'PrivateSubnet2'",
                   "IsCause": true,
                   "Annotation": "",
@@ -922,7 +930,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 242,
+                  "Number": 241,
                   "Content": "      Tags:",
                   "IsCause": true,
                   "Annotation": "",
@@ -932,7 +940,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 243,
+                  "Number": 242,
                   "Content": "        - Key: Name",
                   "IsCause": true,
                   "Annotation": "",
@@ -942,7 +950,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 244,
+                  "Number": 243,
                   "Content": "          Value: !Sub '${EnvironmentName} Private Instance 2'",
                   "IsCause": true,
                   "Annotation": "",
@@ -952,7 +960,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 245,
+                  "Number": 244,
                   "Content": "    Type: AWS::EC2::Instance",
                   "IsCause": true,
                   "Annotation": "",
@@ -983,15 +991,15 @@
           ],
           "Status": "FAIL",
           "CauseMetadata": {
-            "Resource": "tp4_vpc.yaml:294-303",
+            "Resource": "tp4_vpc.yaml:293-302",
             "Provider": "AWS",
             "Service": "ec2",
-            "StartLine": 294,
-            "EndLine": 303,
+            "StartLine": 293,
+            "EndLine": 302,
             "Code": {
               "Lines": [
                 {
-                  "Number": 294,
+                  "Number": 293,
                   "Content": "  PublicInstance1:",
                   "IsCause": true,
                   "Annotation": "",
@@ -1001,7 +1009,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 295,
+                  "Number": 294,
                   "Content": "    Properties:",
                   "IsCause": true,
                   "Annotation": "",
@@ -1011,7 +1019,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 296,
+                  "Number": 295,
                   "Content": "      IamInstanceProfile: LabInstanceProfile",
                   "IsCause": true,
                   "Annotation": "",
@@ -1021,7 +1029,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 297,
+                  "Number": 296,
                   "Content": "      ImageId: ami-00f46ccd1cbfb363e",
                   "IsCause": true,
                   "Annotation": "",
@@ -1031,7 +1039,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 298,
+                  "Number": 297,
                   "Content": "      InstanceType: t3.micro",
                   "IsCause": true,
                   "Annotation": "",
@@ -1041,7 +1049,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 299,
+                  "Number": 298,
                   "Content": "      SubnetId: !Ref 'PublicSubnet1'",
                   "IsCause": true,
                   "Annotation": "",
@@ -1051,7 +1059,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 300,
+                  "Number": 299,
                   "Content": "      Tags:",
                   "IsCause": true,
                   "Annotation": "",
@@ -1061,7 +1069,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 301,
+                  "Number": 300,
                   "Content": "        - Key: Name",
                   "IsCause": true,
                   "Annotation": "",
@@ -1071,7 +1079,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 302,
+                  "Number": 301,
                   "Content": "          Value: !Sub '${EnvironmentName} Public Instance 1'",
                   "IsCause": true,
                   "Annotation": "",
@@ -1081,7 +1089,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 303,
+                  "Number": 302,
                   "Content": "    Type: AWS::EC2::Instance",
                   "IsCause": true,
                   "Annotation": "",
@@ -1112,15 +1120,15 @@
           ],
           "Status": "FAIL",
           "CauseMetadata": {
-            "Resource": "tp4_vpc.yaml:304-313",
+            "Resource": "tp4_vpc.yaml:303-312",
             "Provider": "AWS",
             "Service": "ec2",
-            "StartLine": 304,
-            "EndLine": 313,
+            "StartLine": 303,
+            "EndLine": 312,
             "Code": {
               "Lines": [
                 {
-                  "Number": 304,
+                  "Number": 303,
                   "Content": "  PublicInstance2:",
                   "IsCause": true,
                   "Annotation": "",
@@ -1130,7 +1138,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 305,
+                  "Number": 304,
                   "Content": "    Properties:",
                   "IsCause": true,
                   "Annotation": "",
@@ -1140,7 +1148,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 306,
+                  "Number": 305,
                   "Content": "      IamInstanceProfile: LabInstanceProfile",
                   "IsCause": true,
                   "Annotation": "",
@@ -1150,7 +1158,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 307,
+                  "Number": 306,
                   "Content": "      ImageId: ami-00f46ccd1cbfb363e",
                   "IsCause": true,
                   "Annotation": "",
@@ -1160,7 +1168,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 308,
+                  "Number": 307,
                   "Content": "      InstanceType: t3.micro",
                   "IsCause": true,
                   "Annotation": "",
@@ -1170,7 +1178,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 309,
+                  "Number": 308,
                   "Content": "      SubnetId: !Ref 'PublicSubnet2'",
                   "IsCause": true,
                   "Annotation": "",
@@ -1180,7 +1188,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 310,
+                  "Number": 309,
                   "Content": "      Tags:",
                   "IsCause": true,
                   "Annotation": "",
@@ -1190,7 +1198,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 311,
+                  "Number": 310,
                   "Content": "        - Key: Name",
                   "IsCause": true,
                   "Annotation": "",
@@ -1200,7 +1208,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 312,
+                  "Number": 311,
                   "Content": "          Value: !Sub '${EnvironmentName} Public Instance 2'",
                   "IsCause": true,
                   "Annotation": "",
@@ -1210,7 +1218,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 313,
+                  "Number": 312,
                   "Content": "    Type: AWS::EC2::Instance",
                   "IsCause": true,
                   "Annotation": "",
@@ -1244,12 +1252,12 @@
             "Resource": "PublicSubnet1",
             "Provider": "AWS",
             "Service": "ec2",
-            "StartLine": 327,
-            "EndLine": 327,
+            "StartLine": 326,
+            "EndLine": 326,
             "Code": {
               "Lines": [
                 {
-                  "Number": 321,
+                  "Number": 320,
                   "Content": "  PublicSubnet1:",
                   "IsCause": false,
                   "Annotation": "",
@@ -1259,7 +1267,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 322,
+                  "Number": 321,
                   "Content": "",
                   "IsCause": false,
                   "Annotation": "",
@@ -1268,7 +1276,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 327,
+                  "Number": 326,
                   "Content": "      MapPublicIpOnLaunch: true",
                   "IsCause": true,
                   "Annotation": "",
@@ -1278,7 +1286,7 @@
                   "LastCause": true
                 },
                 {
-                  "Number": 331,
+                  "Number": 330,
                   "Content": "",
                   "IsCause": false,
                   "Annotation": "",
@@ -1287,7 +1295,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 332,
+                  "Number": 331,
                   "Content": "    Type: AWS::EC2::Subnet",
                   "IsCause": false,
                   "Annotation": "",
@@ -1303,8 +1311,8 @@
                 "Resource": "PublicSubnet1",
                 "Filename": "tp4_vpc.yaml",
                 "Location": {
-                  "StartLine": 321,
-                  "EndLine": 332
+                  "StartLine": 320,
+                  "EndLine": 331
                 }
               }
             ]
@@ -1331,12 +1339,12 @@
             "Resource": "PublicSubnet2",
             "Provider": "AWS",
             "Service": "ec2",
-            "StartLine": 344,
-            "EndLine": 344,
+            "StartLine": 343,
+            "EndLine": 343,
             "Code": {
               "Lines": [
                 {
-                  "Number": 338,
+                  "Number": 337,
                   "Content": "  PublicSubnet2:",
                   "IsCause": false,
                   "Annotation": "",
@@ -1346,7 +1354,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 339,
+                  "Number": 338,
                   "Content": "",
                   "IsCause": false,
                   "Annotation": "",
@@ -1355,7 +1363,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 344,
+                  "Number": 343,
                   "Content": "      MapPublicIpOnLaunch: true",
                   "IsCause": true,
                   "Annotation": "",
@@ -1365,7 +1373,7 @@
                   "LastCause": true
                 },
                 {
-                  "Number": 348,
+                  "Number": 347,
                   "Content": "",
                   "IsCause": false,
                   "Annotation": "",
@@ -1374,7 +1382,7 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 349,
+                  "Number": 348,
                   "Content": "    Type: AWS::EC2::Subnet",
                   "IsCause": false,
                   "Annotation": "",
@@ -1390,8 +1398,8 @@
                 "Resource": "PublicSubnet2",
                 "Filename": "tp4_vpc.yaml",
                 "Location": {
-                  "StartLine": 338,
-                  "EndLine": 349
+                  "StartLine": 337,
+                  "EndLine": 348
                 }
               }
             ]
